@@ -189,6 +189,7 @@ void GameOfLife::loadConfig(){
 		
 		
 		std::string input;
+		std::cout << std::endl;
 		std::cout << "Hello dear User," << std::endl
 		<< "to play my humble version of 'Game of Life'" << std::endl
 		<< "enter here the path to your 'config.txt' file or write 'manual' to manually insert size: ";
@@ -247,7 +248,7 @@ void GameOfLife::loadConfig(){
 				fps = stoi(get);
 				std::cout << get << std::endl;	
 
-				//allocates the two matrices with retrieved integers
+				config.close();
 				
 		
 				std::cout << std::endl << "Config File Read Succesfully" << std::endl;
@@ -263,8 +264,7 @@ void GameOfLife::loop(){
 		while(screen->isOpen()){
 			while (screen->pollEvent(e)) {
 				if (e.type == e.Closed) screen->close();
-			}
-			std::cout << "Size: " << shape.getSize().x << std::endl; 
+			} 
 			if(key.isKeyPressed(sf::Keyboard::Enter)) start = !start;
 			play();
 		}
