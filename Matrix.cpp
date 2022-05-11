@@ -102,19 +102,17 @@ Matrix::Matrix(int r, int c){
 }
 //destructor
 Matrix::~Matrix(){
-        //std::cout << "\n\nEnd of scope" << std::endl;
         if(matrix != nullptr) {
-            //std::cout << "Cleaning memory ./." << std::endl;
-            std::cout << "destructor" << std::endl;
+            //std::cout << "destructor" << std::endl;
             for(int k = 0; k < rows; k++){
-                std::cout << "destroyed " << k << std::endl;
+                //std::cout << "destroyed " << k << std::endl;
                 if (matrix[k] != nullptr){
                     delete[] matrix[k];
                     matrix[k] = nullptr;
                 }
             } delete[] matrix;
             matrix = nullptr;
-            std::cout << "Done..." << std::endl;
+            //std::cout << "Done..." << std::endl;
             Matrix::counter--;
        }//else std::cout << "Already cleaned at RunTime!" << std::endl;
 }
@@ -216,16 +214,16 @@ void Matrix::random() const{
 //non-const object methods
 void Matrix::free(){
         if(matrix != nullptr){
-            std::cout << "free" << std::endl;
+            //std::cout << "free" << std::endl;
             for(int k = 0; k < rows; k++){
-                std::cout << "freed" << k << std::endl;
+                //std::cout << "freed " << k << std::endl;
                 if (matrix[k] != nullptr){
                     delete[] matrix[k];
                     matrix[k] = nullptr;
                 }
             }delete[] matrix;
             matrix = nullptr;
-            std::cout << "Memory area cleaned!" << std::endl;
+            //std::cout << "Memory area cleaned!" << std::endl;
             Matrix::counter--;
         }else{
             return;
