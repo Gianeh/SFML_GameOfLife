@@ -1,0 +1,9 @@
+Game configuration.
+Resolution (single cell size in pixels):
+10
+Rows:
+200
+Cols:
+200
+framerate:
+10
